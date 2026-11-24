@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe de julio de 2026: 6 oficinas y 9 locales con licencia para ser viviendas en Barcelona · ObraRadar BCN</title>
+<meta name="description" content="Las oficinas y los locales son 15 de los 18 cambios de uso a vivienda entre las 171 licencias de obra mayor que publicó la Gaseta Municipal de Barcelona en julio de 2026. Cada obra, con su dirección y su mes de concesión.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="ObraRadar BCN">
+<meta property="og:title" content="6 oficinas y 9 locales con licencia para ser viviendas en Barcelona">
+<meta property="og:description" content="Las oficinas y los locales son 15 de los 18 cambios de uso a vivienda entre las 171 licencias de obra mayor que publicó la Gaseta Municipal de Barcelona en julio de 2026. Cada obra, con su dirección y su mes de concesión.">
+<meta property="og:url" content="https://jaans21.github.io/obraradar-web/informe-2026-07.html">
+<meta property="og:image" content="https://jaans21.github.io/obraradar-web/og-2026-07.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mapa de Barcelona con las 171 obras con licencia, coloreadas por tipo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="6 oficinas y 9 locales con licencia para ser viviendas en Barcelona">
+<meta name="twitter:description" content="Las oficinas y los locales son 15 de los 18 cambios de uso a vivienda entre las 171 licencias de obra mayor que publicó la Gaseta Municipal de Barcelona en julio de 2026. Cada obra, con su dirección y su mes de concesión.">
+<meta name="twitter:image" content="https://jaans21.github.io/obraradar-web/og-2026-07.png">
+<script>/* tema antes de pintar (evita el destello); la imagen ?og siempre en claro */try{var t=/[?&]og(=|&|$)/.test(location.search)?"light":localStorage.getItem("obraradar-tema");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preload" href="static/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/obras-2026-07.geojson" as="fetch" crossorigin>
+<link rel="preload" href="static/glyphs/Noto%20Sans%20Regular/0-255.pbf" as="fetch" crossorigin>
+<link rel="modulepreload" href="informe.js">
+<link rel="modulepreload" href="map.js">
+<link rel="modulepreload" href="relato.js">
+<link rel="stylesheet" href="static/vendor/maplibre-gl.css">
+<link rel="stylesheet" href="app.css">
+<script>window.OBRARADAR_CONFIG = {"site_url": "https://jaans21.github.io/obraradar-web/", "goatcounter": "jaans21", "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfoLJAF0fY9p114rxvaI1TaD9tEE9CGtsOlDJRbzCrVrHQjbw/viewform?usp=publish-editor", "author_name": "Jan Saldaña", "author_url": "https://www.linkedin.com/in/jansalda%C3%B1a/"}; window.OBRARADAR_INFORME = "2026-07";</script>
+</head>
+<body class="pagina-informe">
+<a class="saltar" href="index.html">Ir al mapa de obras</a>
+<!-- móvil: las tarjetas pasan por encima del mapa y tapaban su atribución; esta va encima de todo -->
+<p class="atrib-movil">Mapa: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a> y <a href="https://protomaps.com" target="_blank" rel="noopener">Protomaps</a></p>
+
+<header class="barra">
+  <a class="marca" href="index.html">ObraRadar BCN</a>
+  <div class="barra-acciones">
+    <button type="button" class="tema-boton" data-tema hidden aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro"><span aria-hidden="true"></span></button>
+    <a class="boton boton-claro chaflan" href="index.html#m=ed-2026-07"><span class="solo-ancho">Ver las 171 obras en el mapa</span><span class="solo-movil">Ver las 171 obras</span></a>
+  </div>
+  <div class="progreso" aria-hidden="true"><span></span></div>
+</header>
+
+<main>
+  <div class="relato" id="relato">
+    <div class="escenario" id="escenario">
+      <div id="mapa" class="mapa" role="img" aria-label="Mapa de Barcelona con las obras que cuenta cada paso del informe"></div>
+      <aside class="leyenda" aria-label="Leyenda del mapa">
+        <ul>
+          <li><span class="punto punto-obra_nova" aria-hidden="true"></span>Obra nueva</li>
+          <li><span class="punto punto-gran_rehabilitacio" aria-hidden="true"></span>Gran rehabilitación</li>
+          <li><span class="punto punto-enderroc" aria-hidden="true"></span>Derribo</li>
+          <li><span class="punto punto-altres" aria-hidden="true"></span>Rehabilitación parcial, reforma u otras</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="pasos">
+      <section class="paso paso-entrada" data-paso="entrada">
+        <div class="tarjeta chaflan">
+          <!-- el H1 es el gancho (titular elegido por el copywriter entre 3, 2ª crítica); el inventario,
+               en la línea de contexto -->
+          <h1>6 oficinas y 9 locales con licencia para ser viviendas en Barcelona</h1>
+          <p class="contexto">En las 171 licencias de obra mayor que publicó la Gaseta en julio de 2026, concedidas de enero a marzo. Las oficinas y los locales son 15 de los 18 cambios de uso a vivienda.</p>
+          <p class="nota">Es el informe archivado de julio de 2026. <a href="informe.html">Ver el último informe, de noviembre de 2026</a>.</p>
+          <p>El mapa las muestra mes a mes.</p>
+          <p class="nota">En esta edición, la Gaseta publicó las licencias entre cuatro y seis meses después de concederlas.</p>
+        </div>
+      </section>
+
+      <section class="paso" data-paso="canvi">
+        <div class="tarjeta chaflan">
+          <h2>18 cambios de uso a vivienda</h2>
+          <p>Los locales son el origen más repetido: 9 de las 18.</p>
+          <p class="lectura">Sarrià-Sant Gervasi es el distrito con más cambios de uso a vivienda: 6 de los 18.</p>
+          <figure class="grafico" aria-label="Cambios de uso a vivienda, por origen">
+            <ul class="flujos"><li><span class="fl-nombre">Oficina → vivienda</span><span class="fl-barra" style="--v:0.6667" aria-hidden="true"></span><span class="fl-num">6</span></li><li><span class="fl-nombre">Local → vivienda</span><span class="fl-barra" style="--v:1.0000" aria-hidden="true"></span><span class="fl-num">9</span></li><li><span class="fl-nombre">Otro o sin indicar → vivienda</span><span class="fl-barra fl-resto" style="--v:0.3333" aria-hidden="true"></span><span class="fl-num">3</span></li></ul>
+          </figure>
+          <p class="nota">Aparte, otras 4 licencias cambian el uso sin acabar en vivienda.</p>
+        </div>
+      </section>
+
+      <section class="paso" data-paso="amiant">
+        <div class="tarjeta chaflan">
+          <h2>10 obras tocan fibrocemento o amianto</h2>
+          <p>9 son obras en cubiertas de fibrocemento.</p>
+          <p class="lectura">Los 8 edificios con año en el Catastro son anteriores a 2002, cuando se prohibió el amianto en España. El más reciente es de 1980 (año del edificio, no de la cubierta).</p>
+          <a class="boton chaflan" href="index.html#m=ed-2026-07&amp;g=amianto">Ver las 10 obras con fibrocemento o amianto</a>
+        </div>
+      </section>
+
+
+      <section class="paso" data-paso="tipos">
+        <div class="tarjeta chaflan">
+          <h2>46 son grandes obras: obra nueva, gran rehabilitación o derribo</h2>
+          <p>Es el 27 % de las licencias.</p>
+          <p>De los 12 derribos, 1 es parcial.</p>
+          <p>De las otras 125, 36 son rehabilitaciones parciales; el resto, reformas u otras obras.</p>
+          <p class="lectura">Las obras nuevas con viviendas suman 298. La mayor tiene 90.</p>
+          <figure class="grafico" aria-label="Licencias por tipo de obra">
+            <div class="tipos-barra"><span class="seg seg-obra_nova" style="flex-grow:20" title="Obra nueva: 20"></span><span class="seg seg-gran_rehabilitacio" style="flex-grow:14" title="Gran rehabilitación: 14"></span><span class="seg seg-enderroc" style="flex-grow:12" title="Derribo: 12"></span><span class="seg seg-altres" style="flex-grow:125" title="Rehabilitación parcial, reforma u otras: 125"></span></div>
+            <ul class="tipos-leyenda"><li><span class="punto punto-obra_nova" aria-hidden="true"></span>Obra nueva <strong>20</strong></li><li><span class="punto punto-gran_rehabilitacio" aria-hidden="true"></span>Gran rehabilitación <strong>14</strong></li><li><span class="punto punto-enderroc" aria-hidden="true"></span>Derribo <strong>12</strong></li><li><span class="punto punto-altres" aria-hidden="true"></span>Rehabilitación parcial, reforma u otras <strong>125</strong></li></ul>
+          </figure>
+        </div>
+      </section>
+
+      <section class="paso" data-paso="grande" data-uid="2026-03-c-bolivia-43"><div class="tarjeta chaflan"><h2>C. Bolívia 43</h2><p class="frase">Obra nueva de 64 viviendas · PB + 7 y 2 sótanos · 64 plazas de coche. En Sant Martí.</p><blockquote lang="ca" class="cita">Construcció d&#x27;un edifici d&#x27;obra nova format per dos cossos, un bloc lineal de PB+7 i un bloc en xamfrà de PB+9, amb dues plantes soterrani</blockquote><p class="nota">Licencia de marzo de 2026; texto de la Gaseta.</p></div></section><section class="paso" data-paso="grande" data-uid="2026-02-pl-estacio-12"><div class="tarjeta chaflan"><h2>Pl. Estació 12</h2><p class="frase">Obra nueva · PB + 8 · 30 plazas de coche. En Sant Andreu.</p><blockquote lang="ca" class="cita">Construcció d&#x27;un edifici destinat a ús hospitalari (Clínica St</blockquote><p class="nota">Licencia de febrero de 2026; texto de la Gaseta.</p></div></section><section class="paso" data-paso="grande" data-uid="2026-02-c-corsega-174"><div class="tarjeta chaflan"><h2>C. Còrsega 174</h2><p class="frase">Derribo de nave industrial. En Eixample.</p><blockquote lang="ca" class="cita">Demolició integral de la nau de planta baixa</blockquote><p class="nota">Licencia de febrero de 2026; texto de la Gaseta.</p></div></section>
+      <section class="paso" data-paso="distritos">
+        <div class="tarjeta chaflan">
+          <h2>Eixample encabeza en licencias; Sants-Montjuïc, en grandes obras</h2>
+          <p>Eixample tiene 39 licencias, pero solo 5 grandes obras; 4 están en edificios o entornos protegidos. Sants-Montjuïc tiene 22 licencias y 11 son grandes obras.</p>
+          <p class="lectura lectura-dist">Eixample reúne el 23 % de las licencias; Sants-Montjuïc, el 24 % de las grandes obras.</p>
+          <div class="rampa-leyenda" aria-label="En el mapa, el color del distrito indica cuántas grandes obras tiene">
+            <span class="rampa-txt">En el mapa, grandes obras por distrito</span>
+            <span class="rampa-escala"><span>2</span><span class="rampa-barra" aria-hidden="true"></span><span>11</span></span>
+          </div>
+          <figure class="grafico" aria-label="Licencias por distrito: todas y grandes obras">
+            <ul class="rk-leyenda" aria-hidden="true">
+              <li><span class="muestra muestra-total"></span>Todas las licencias</li>
+              <li><span class="muestra muestra-grandes"></span>Grandes obras</li>
+            </ul>
+            <ol class="ranking"><li><span class="rk-nombre">Eixample</span><span class="rk-barra" style="--t:1.0000;--g:0.1282" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">39 <span class="rk-num-g">(5)</span></span></li><li><span class="rk-nombre">Sarrià-Sant Gervasi</span><span class="rk-barra" style="--t:0.6410;--g:0.1795" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">25 <span class="rk-num-g">(7)</span></span></li><li><span class="rk-nombre">Sants-Montjuïc</span><span class="rk-barra" style="--t:0.5641;--g:0.2821" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">22 <span class="rk-num-g">(11)</span></span></li><li><span class="rk-nombre">Ciutat Vella</span><span class="rk-barra" style="--t:0.5385;--g:0.0513" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">21 <span class="rk-num-g">(2)</span></span></li><li><span class="rk-nombre">Horta-Guinardó</span><span class="rk-barra" style="--t:0.4615;--g:0.1538" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">18 <span class="rk-num-g">(6)</span></span></li><li><span class="rk-nombre">Sant Martí</span><span class="rk-barra" style="--t:0.3846;--g:0.1026" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">15 <span class="rk-num-g">(4)</span></span></li><li><span class="rk-nombre">Gràcia</span><span class="rk-barra" style="--t:0.2564;--g:0.0513" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">10 <span class="rk-num-g">(2)</span></span></li><li><span class="rk-nombre">Les Corts</span><span class="rk-barra" style="--t:0.2308;--g:0.0769" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">9 <span class="rk-num-g">(3)</span></span></li><li><span class="rk-nombre">Nou Barris</span><span class="rk-barra" style="--t:0.1538;--g:0.0769" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">6 <span class="rk-num-g">(3)</span></span></li><li><span class="rk-nombre">Sant Andreu</span><span class="rk-barra" style="--t:0.1538;--g:0.0769" aria-hidden="true"><span class="rk-g"></span></span><span class="rk-num">6 <span class="rk-num-g">(3)</span></span></li></ol>
+            <p class="rk-nota-movil">Los 5 distritos con más licencias; el resto, en el filtro de distrito del mapa.</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="paso" data-paso="patrimoni">
+        <div class="tarjeta chaflan">
+          <h2>24 obras, el 14 %, están en edificios, entornos o conjuntos protegidos</h2>
+          <p>Con nivel de protección A, B, C o D en el catálogo de patrimonio.</p>
+          <p class="lectura">Ciutat Vella concentra 10 de las 24.</p>
+        </div>
+      </section>
+
+      <section class="paso paso-final" data-paso="explorar">
+        <div class="tarjeta chaflan">
+          <h2>171 obras para filtrar por gremio, distrito y mes</h2>
+          <p>Cada obra tiene ficha con dirección, tipo, mes de concesión, el PDF de la Gaseta y, en 145, los datos del Catastro (en 1 puede no cuadrar con la licencia).</p>
+          <a class="boton chaflan" href="index.html#m=ed-2026-07">Ver las 171 obras en el mapa</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <p>Datos: licencias de obra mayor publicadas en la Gaseta Municipal de Barcelona (las descripciones se muestran en catalán, tal como se publican) y acuerdos de la Comissió de Govern. Direcciones geolocalizadas con el callejero de Open Data BCN. Clasificación automática por palabras clave: puede tener errores.</p>
+  <p>Otros informes: <a href="informe.html">noviembre de 2026</a>, <a href="informe-2026-10.html">octubre de 2026</a>, <a href="informe-2026-05.html">mayo de 2026</a>.</p>
+  <p>Generado el 24 de noviembre de 2026.</p>
+  <p class="autoria">Proyecto personal de <a href="https://www.linkedin.com/in/jansalda%C3%B1a/" target="_blank" rel="author noopener">Jan Saldaña</a>, sin relación con ninguna empresa. <a href="que-es.html">Qué es esto, de dónde salen los datos y qué no incluye</a></p>
+</footer>
+
+<script src="static/vendor/maplibre-gl.js"></script>
+<script src="static/vendor/pmtiles.js"></script>
+<script src="static/vendor/protomaps-basemaps.js"></script>
+<script type="module" src="informe.js"></script>
+</body>
+</html>

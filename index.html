@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ObraRadar BCN: 759 licencias de obra mayor en Barcelona</title>
+<meta name="description" content="759 licencias de obra mayor en Barcelona, concedidas entre septiembre de 2025 y agosto de 2026, en un mapa: fibrocemento y amianto, andamios, cambios de uso, ascensores, piscinas, obra nueva y derribos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="ObraRadar BCN">
+<meta property="og:title" content="759 licencias de obra mayor en Barcelona, en un mapa">
+<meta property="og:description" content="Concedidas entre septiembre de 2025 y agosto de 2026. Cada obra, con su dirección y su mes de concesión.">
+<meta property="og:url" content="https://jaans21.github.io/obraradar-web/">
+<meta property="og:image" content="https://jaans21.github.io/obraradar-web/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mapa de Barcelona con las 40 obras con licencia publicadas en noviembre de 2026, coloreadas por tipo">
+<meta name="twitter:card" content="summary_large_image">
+<script>/* tema antes de pintar (evita el destello); la imagen ?og siempre en claro */try{var t=/[?&]og(=|&|$)/.test(location.search)?"light":localStorage.getItem("obraradar-tema");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preload" href="static/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/obras.geojson" as="fetch" crossorigin>
+<link rel="preload" href="static/glyphs/Noto%20Sans%20Regular/0-255.pbf" as="fetch" crossorigin>
+<link rel="modulepreload" href="app.js">
+<link rel="modulepreload" href="map.js">
+<link rel="modulepreload" href="explorador.js">
+<link rel="stylesheet" href="static/vendor/maplibre-gl.css">
+<link rel="stylesheet" href="app.css">
+<script>window.OBRARADAR_CONFIG = {"site_url": "https://jaans21.github.io/obraradar-web/", "goatcounter": "jaans21", "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfoLJAF0fY9p114rxvaI1TaD9tEE9CGtsOlDJRbzCrVrHQjbw/viewform?usp=publish-editor", "author_name": "Jan Saldaña", "author_url": "https://www.linkedin.com/in/jansalda%C3%B1a/"}; window.OBRARADAR_GREMIOS = [{"clave": "amianto", "nombre": "Amianto y fibrocemento", "n": 34, "nota": "Solo obra mayor. Las retiradas pequeñas de fibrocemento pueden tramitarse como obra menor y entonces no aparecen aquí."}, {"clave": "andamios", "nombre": "Andamios y fachadas", "n": 214, "nota": "Solo obra mayor. Las reparaciones pequeñas de fachada pueden ir por obra menor o comunicado y no aparecer aquí."}, {"clave": "vivienda", "nombre": "Cambios de uso a vivienda", "n": 86, "nota": ""}, {"clave": "ascensores", "nombre": "Ascensores", "n": 47, "nota": ""}, {"clave": "piscinas", "nombre": "Piscinas", "n": 47, "nota": ""}, {"clave": "obra_nueva", "nombre": "Obra nueva", "n": 86, "nota": ""}, {"clave": "derribos", "nombre": "Derribos", "n": 57, "nota": ""}, {"clave": "gran_rehabilitacion", "nombre": "Grandes rehabilitaciones", "n": 58, "nota": ""}, {"clave": "cubiertas", "nombre": "Cubiertas y terrados", "n": 114, "nota": ""}, {"clave": "reformas", "nombre": "Reformas interiores", "n": 88, "nota": ""}, {"clave": "estructura", "nombre": "Estructura", "n": 41, "nota": ""}, {"clave": "division", "nombre": "División de viviendas", "n": 63, "nota": ""}, {"clave": "ampliaciones", "nombre": "Ampliaciones", "n": 49, "nota": ""}, {"clave": "carpinteria", "nombre": "Ventanas, puertas y carpintería", "n": 49, "nota": ""}, {"clave": "instalaciones", "nombre": "Instalaciones", "n": 27, "nota": ""}, {"clave": "exteriores", "nombre": "Patios, muros y exteriores", "n": 39, "nota": ""}, {"clave": "otras", "nombre": "Otras obras", "n": 50, "nota": ""}]; window.OBRARADAR_VISTA = [[2.0882, 41.3263], [2.2176, 41.4606]]; window.OBRARADAR_EDICION = {"id": "2026-11", "n": 759};</script>
+</head>
+<body class="pagina-app" data-vista="portada">
+<a class="saltar" href="#explorador">Saltar a la lista de obras</a>
+
+<header class="barra">
+  <a class="marca" href="#">ObraRadar BCN</a>
+  <div class="barra-acciones">
+    <button type="button" class="tema-boton" data-tema hidden aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro"><span aria-hidden="true"></span></button>
+    <a class="boton boton-claro chaflan" href="informe.html"><span class="solo-ancho">Informe: 2 cambios de uso a vivienda</span><span class="solo-movil">Informe: 2 cambios de uso</span></a>
+  </div>
+</header>
+
+<main class="app" id="app">
+  <section class="panel" id="panel" aria-label="Obras con licencia">
+    <!-- portada: qué es y una entrada por gremio -->
+    <div class="portada" id="portada">
+      <h1>759 licencias de obra mayor en Barcelona</h1>
+      <p class="apoyo">Dónde hay licencia para construir, reformar o derribar en Barcelona, obra a obra, con los datos del edificio actual cuando el Catastro los tiene.</p>
+      <p class="fechas">Concedidas entre septiembre de 2025 y agosto de 2026. Lo último: <a href="#m=ed-2026-11">40 licencias publicadas en noviembre de 2026</a>.</p>
+      <ul class="gremios" aria-label="Obras por gremio"><li><a class="gremio" href="#g=amianto" data-gremio="amianto" aria-label="Amianto y fibrocemento: ver las 34 obras en el mapa"><span class="gr-nombre">Amianto y fibrocemento</span><span class="gr-n"><strong>34</strong> obras</span><span class="gr-sub">28 en cubiertas de fibrocemento; la Gaseta nombra el amianto en 16</span></a></li><li><a class="gremio" href="#g=andamios" data-gremio="andamios" aria-label="Andamios y fachadas: ver las 214 obras en el mapa"><span class="gr-nombre">Andamios y fachadas</span><span class="gr-n"><strong>214</strong> obras</span><span class="gr-sub">81 declaran andamio o medios auxiliares</span></a></li><li><a class="gremio" href="#g=vivienda" data-gremio="vivienda" aria-label="Cambios de uso a vivienda: ver las 86 obras en el mapa"><span class="gr-nombre">Cambios de uso a vivienda</span><span class="gr-n"><strong>86</strong> obras</span><span class="gr-sub">43 desde local, 27 desde oficina</span></a></li><li><a class="gremio" href="#g=ascensores" data-gremio="ascensores" aria-label="Ascensores: ver las 47 obras en el mapa"><span class="gr-nombre">Ascensores</span><span class="gr-n"><strong>47</strong> obras</span><span class="gr-sub">39 obras con ascensor nuevo (45 ascensores)</span></a></li><li><a class="gremio" href="#g=piscinas" data-gremio="piscinas" aria-label="Piscinas: ver las 47 obras en el mapa"><span class="gr-nombre">Piscinas</span><span class="gr-n"><strong>47</strong> obras</span><span class="gr-sub">14 en cubiertas o terrados, 12 en viviendas unifamiliares nuevas</span></a></li><li><a class="gremio" href="#g=obra_nueva" data-gremio="obra_nueva" aria-label="Obra nueva: ver las 86 obras en el mapa"><span class="gr-nombre">Obra nueva</span><span class="gr-n"><strong>86</strong> obras</span><span class="gr-sub">921 viviendas; la mayor promoción, 108</span></a></li><li><a class="gremio" href="#g=derribos" data-gremio="derribos" aria-label="Derribos: ver las 57 obras en el mapa"><span class="gr-nombre">Derribos</span><span class="gr-n"><strong>57</strong> obras</span><span class="gr-sub">49 totales y 8 parciales</span></a></li><li><a class="gremio" href="#g=gran_rehabilitacion" data-gremio="gran_rehabilitacion" aria-label="Grandes rehabilitaciones: ver las 58 obras en el mapa"><span class="gr-nombre">Grandes rehabilitaciones</span><span class="gr-n"><strong>58</strong> obras</span></a></li><li><a class="gremio" href="#g=cubiertas" data-gremio="cubiertas" aria-label="Cubiertas y terrados: ver las 114 obras en el mapa"><span class="gr-nombre">Cubiertas y terrados</span><span class="gr-n"><strong>114</strong> obras</span></a></li><li><a class="gremio" href="#g=reformas" data-gremio="reformas" aria-label="Reformas interiores: ver las 88 obras en el mapa"><span class="gr-nombre">Reformas interiores</span><span class="gr-n"><strong>88</strong> obras</span></a></li><li><a class="gremio" href="#g=estructura" data-gremio="estructura" aria-label="Estructura: ver las 41 obras en el mapa"><span class="gr-nombre">Estructura</span><span class="gr-n"><strong>41</strong> obras</span></a></li><li><a class="gremio" href="#g=division" data-gremio="division" aria-label="División de viviendas: ver las 63 obras en el mapa"><span class="gr-nombre">División de viviendas</span><span class="gr-n"><strong>63</strong> obras</span></a></li><li><a class="gremio" href="#g=ampliaciones" data-gremio="ampliaciones" aria-label="Ampliaciones: ver las 49 obras en el mapa"><span class="gr-nombre">Ampliaciones</span><span class="gr-n"><strong>49</strong> obras</span></a></li><li><a class="gremio" href="#g=carpinteria" data-gremio="carpinteria" aria-label="Ventanas, puertas y carpintería: ver las 49 obras en el mapa"><span class="gr-nombre">Ventanas, puertas y carpintería</span><span class="gr-n"><strong>49</strong> obras</span></a></li><li><a class="gremio" href="#g=instalaciones" data-gremio="instalaciones" aria-label="Instalaciones: ver las 27 obras en el mapa"><span class="gr-nombre">Instalaciones</span><span class="gr-n"><strong>27</strong> obras</span></a></li><li><a class="gremio" href="#g=exteriores" data-gremio="exteriores" aria-label="Patios, muros y exteriores: ver las 39 obras en el mapa"><span class="gr-nombre">Patios, muros y exteriores</span><span class="gr-n"><strong>39</strong> obras</span></a></li><li><a class="gremio" href="#g=otras" data-gremio="otras" aria-label="Otras obras: ver las 50 obras en el mapa"><span class="gr-nombre">Otras obras</span><span class="gr-n"><strong>50</strong> obras</span></a></li></ul>
+      <!-- el aviso, una sola vez y debajo de la lista (2ª crítica): no en cada tarjeta -->
+      <p class="nota obra-menor">Solo obra mayor: las retiradas pequeñas de fibrocemento y las reparaciones pequeñas de fachada pueden tramitarse como obra menor o comunicado y no aparecen aquí.</p>
+      <p class="portada-enlaces">
+        <a class="boton chaflan" href="#explorador">Ver todas las obras (759)</a>
+        <a class="boton boton-claro chaflan" id="alerta-gremio" href="#" target="_blank" rel="noopener" hidden>Apuntarse a la lista de interesados</a>
+        <a class="enlace-informe" href="informe.html">Leer el informe: 2 cambios de uso a vivienda y 7 obras con fibrocemento o amianto</a>
+      </p>
+      <p class="nota" id="alerta-nota" hidden>Todavía no se envían avisos de nuevas licencias. La lista de interesados sirve para saber a quién le servirían.</p>
+      <p class="nota">Las últimas las publicó la Gaseta unos tres meses después de concederlas. Lo más reciente es de agosto de 2026.</p>
+      <p class="nota fuentes">Datos: Gaseta Municipal de Barcelona, Comissió de Govern, Open Data BCN y Catastro. La clasificación es automática y puede tener errores; el texto original está en cada ficha. Generado el 24 de noviembre de 2026.</p>
+      <p class="autoria">Proyecto personal de <a href="https://www.linkedin.com/in/jansalda%C3%B1a/" target="_blank" rel="author noopener">Jan Saldaña</a>, sin relación con ninguna empresa. <a href="que-es.html">Qué es esto, de dónde salen los datos y qué no incluye</a></p>
+    </div>
+
+    <!-- explorador: filtros y lista -->
+    <div class="exp" id="explorador" aria-labelledby="exp-titulo">
+      <div class="exp-cabeza">
+        <a class="volver" href="#" id="volver"><span aria-hidden="true">‹</span> Portada</a>
+        <h2 id="exp-titulo" tabindex="-1" aria-live="polite"><strong id="exp-n">759</strong> <span id="exp-n-txt">de 759 obras</span></h2>
+      </div>
+
+      <form class="filtros" id="filtros" aria-label="Filtros">
+        <!-- un solo sistema: el gremio es el filtro principal (uno a la vez, con su recuento) -->
+        <fieldset class="grupo">
+          <legend>Gremio</legend>
+          <div class="chips chips-gremio" id="f-gremio"></div>
+          <p class="gremio-nota" id="gremio-nota" hidden></p>
+        </fieldset>
+        <!-- móvil: el resto va plegado para que la lista se vea al entrar desde un gremio -->
+        <div class="fila-csv">
+          <button type="button" class="boton boton-claro chaflan" id="descargar-csv">Descargar CSV</button>
+        </div>
+        <button type="button" class="boton boton-claro chaflan ver-filtros" id="ver-filtros" aria-controls="filtros-mas" aria-expanded="false">Filtrar por mes, distrito o tipo de obra</button>
+        <div class="filtros-mas" id="filtros-mas">
+          <div class="selects">
+            <label>Distrito
+              <select id="f-dist"><option value="">Todos</option></select>
+            </label>
+            <label>Mes de concesión
+              <select id="f-mes"></select>
+            </label>
+          </div>
+          <fieldset class="grupo">
+            <legend>Tipo de obra</legend>
+            <div class="chips chips-tipo" id="f-tipo"></div>
+          </fieldset>
+          <div class="acciones-filtro">
+            <button type="button" class="enlace" id="f-limpiar" hidden>Quitar los filtros</button>
+            <button type="button" class="boton boton-claro chaflan" id="copiar-vista" data-txt="Copiar enlace a esta vista" data-ok="Enlace copiado" aria-label="Copiar enlace a esta vista">Copiar enlace a esta vista</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="vacio" id="vacio" hidden role="status"></div>
+      <ul class="lista" id="lista" aria-label="Obras visibles" tabindex="-1"></ul>
+    </div>
+  </section>
+
+  <div class="exp-mapa" id="exp-mapa">
+    <!-- móvil, portada: la franja de mapa es también la entrada a todas las obras (el botón del panel
+         queda bajo el pliegue con las 7 filas de gremio) -->
+    <a class="boton chaflan ver-mapa" href="#explorador">Ver las 759 obras en el mapa</a>
+    <div id="mapa" class="mapa" role="region" aria-label="Mapa de las obras con licencia (la lista tiene las mismas obras)"></div>
+    <aside class="leyenda" aria-label="Leyenda del mapa">
+      <ul>
+        <li><span class="punto punto-obra_nova" aria-hidden="true"></span>Obra nueva</li>
+        <li><span class="punto punto-gran_rehabilitacio" aria-hidden="true"></span>Gran rehabilitación</li>
+        <li><span class="punto punto-enderroc" aria-hidden="true"></span>Derribo</li>
+        <li><span class="punto punto-altres" aria-hidden="true"></span>Rehabilitación parcial, reforma u otras</li>
+      </ul>
+    </aside>
+  </div>
+
+  <aside class="detalle chaflan" id="detalle" aria-labelledby="det-dir" hidden tabindex="-1">
+    <div class="det-asa" aria-hidden="true"></div>
+    <button type="button" class="det-cerrar" id="det-cerrar" aria-label="Cerrar la ficha">×</button>
+    <div class="det-cuerpo" id="det-cuerpo">
+      <div class="det-cabeza">
+        <h3 id="det-dir"></h3>
+        <p class="det-meta"><span class="punto" id="det-punto"></span><span id="det-tipo"></span><span id="det-dist"></span></p>
+      </div>
+      <!-- orden pedido: resumen → inmueble → obra → cuándo → acciones → texto original -->
+      <p class="det-resumen" id="det-resumen"></p>
+      <section class="det-bloque" id="det-inmueble" aria-labelledby="det-inmueble-t">
+        <h4 id="det-inmueble-t"><span id="det-inmueble-tit">El edificio hoy</span> <span class="det-fuente-dato">según el Catastro</span></h4>
+        <p class="det-nota" id="det-inmueble-nota" hidden></p>
+        <dl class="det-datos" id="det-inmueble-l"></dl>
+        <p class="det-nota" id="det-rc-p" hidden>Referencia catastral <a id="det-rc" href="#" target="_blank" rel="noopener"></a>: consúltala en la Sede del Catastro.</p>
+      </section>
+      <section class="det-bloque" id="det-obra" aria-labelledby="det-obra-t">
+        <h4 id="det-obra-t">La obra <span class="det-fuente-dato">según la licencia</span></h4>
+        <dl class="det-datos" id="det-obra-l"></dl>
+      </section>
+      <p class="det-cuando" id="det-cuando"></p>
+      <!-- el siguiente paso: ver el edificio, guardar la dirección, ir a la fuente -->
+      <div class="det-acciones">
+        <a class="boton chaflan" id="det-sv" href="#" target="_blank" rel="noopener">Ver en Street View</a>
+        <button type="button" class="boton boton-claro chaflan" id="det-copiar" data-txt="Copiar dirección" data-ok="Copiada">Copiar dirección</button>
+        <a class="boton boton-claro chaflan" id="det-gaseta" href="#" target="_blank" rel="noopener">Abrir el PDF de la Gaseta</a>
+      </div>
+      <p class="det-prom" id="det-prom" hidden></p>
+      <div class="det-etiq" id="det-etiq" aria-label="Etiquetas de la obra"></div>
+      <details class="det-fuente">
+        <summary>Texto original de la Gaseta (en catalán)</summary>
+        <p class="det-desc" id="det-desc" lang="ca"></p>
+      </details>
+      <p class="det-id">Referencia: <code id="det-uid"></code></p>
+    </div>
+  </aside>
+</main>
+
+<script src="static/vendor/maplibre-gl.js"></script>
+<script src="static/vendor/pmtiles.js"></script>
+<script src="static/vendor/protomaps-basemaps.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

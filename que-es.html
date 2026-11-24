@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qué es ObraRadar BCN: fuentes y límites de las 759 licencias</title>
+<meta name="description" content="Quién hace ObraRadar BCN, de dónde salen los datos de las 759 licencias de obra mayor y qué no incluye.">
+<script>/* tema antes de pintar (evita el destello) */try{var t=localStorage.getItem("obraradar-tema");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preload" href="static/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css">
+<script>window.OBRARADAR_CONFIG = {"site_url": "https://jaans21.github.io/obraradar-web/", "goatcounter": "jaans21", "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfoLJAF0fY9p114rxvaI1TaD9tEE9CGtsOlDJRbzCrVrHQjbw/viewform?usp=publish-editor", "author_name": "Jan Saldaña", "author_url": "https://www.linkedin.com/in/jansalda%C3%B1a/"};</script>
+</head>
+<body class="pagina-texto">
+<header class="barra">
+  <a class="marca" href="index.html">ObraRadar BCN</a>
+  <div class="barra-acciones">
+    <button type="button" class="tema-boton" data-tema hidden aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro"><span aria-hidden="true"></span></button>
+    <a class="boton boton-claro chaflan" href="index.html#explorador"><span class="solo-ancho">Ver las 759 obras en el mapa</span><span class="solo-movil">Ver las 759 obras</span></a>
+  </div>
+</header>
+
+<main class="texto">
+  <h1>Qué es ObraRadar BCN</h1>
+  <p class="entradilla">Un mapa de las licencias de obra mayor que publica la Gaseta Municipal de Barcelona, con los datos de cada obra sacados de su descripción. Recoge 759 licencias concedidas entre septiembre de 2025 y agosto de 2026; las últimas, publicadas en noviembre de 2026.</p>
+
+  <h2>Para qué sirve</h2>
+  <ul>
+    <li><strong>Si vendes a obra</strong> (desamiantado, andamios, fachadas, reformas, ascensores, piscinas, derribos): ver dónde hay una obra de cada oficio, qué se va a hacer y cuándo se concedió la licencia, con la dirección, el PDF de la Gaseta y, en 628 obras, los datos del Catastro. Se pueden descargar en CSV.</li>
+    <li><strong>Si eres técnico</strong>: el <a href="informe.html">informe de noviembre de 2026</a> empieza por 2 cambios de uso a vivienda y 7 obras con fibrocemento o amianto.</li>
+  </ul>
+
+  <h2>De dónde salen los datos</h2>
+  <ul>
+    <li><strong>Gaseta Municipal de Barcelona</strong>: las licencias de obra mayor, con su dirección, su descripción (en catalán, tal como se publica) y el PDF original.</li>
+    <li><strong>Acuerdos de la Comissió de Govern</strong>: el promotor o titular, solo cuando es una empresa o entidad.</li>
+    <li><strong>Open Data BCN</strong>: el callejero para situar cada dirección y los límites de los distritos.</li>
+    <li><strong>Catastro</strong> (servicios web públicos de la Sede Electrónica): año de construcción, superficie, uso, plantas y viviendas del edificio que consta hoy en la dirección, en 628 de las 759 obras. En una obra nueva es lo que consta hoy en la parcela (el solar o el edificio anterior). Si no hay coincidencia segura, la ficha lo dice. En 8 obras los datos del Catastro no cuadran con la licencia: la ficha los marca "por confirmar".</li>
+    <li><strong>OpenStreetMap y Protomaps</strong>: el mapa de fondo.</li>
+  </ul>
+  <p>El tipo de obra, los gremios y la línea resumen se calculan con reglas a partir de la descripción: pueden equivocarse. El texto original de la Gaseta está siempre en la ficha de cada obra.</p>
+
+  <h2>Qué no incluye</h2>
+  <ul>
+    <li><strong>Obra menor</strong>: reformas pequeñas dentro de una vivienda o un local y retiradas pequeñas de fibrocemento, que pueden tramitarse así.</li>
+    <li><strong>Comunicados</strong> (comunicaciones previas y assabentats de obras): no son licencias de obra mayor y no están en esta lista.</li>
+    <li>Si la obra ha empezado o ha terminado: la Gaseta publica la licencia concedida, no el estado de la obra. Las últimas se publicaron unos tres meses después de concederse.</li>
+    <li>Licencias concedidas en otros meses: las más antiguas de la web son de septiembre de 2025.</li>
+  </ul>
+
+  <h2>Privacidad</h2>
+  <p>La web no muestra pisos, puertas ni nombres de personas físicas: se quitan de las descripciones antes de publicarlas. Del Catastro solo se usan datos del edificio, nunca de sus titulares.</p>
+
+  <h2>Quién lo hace</h2>
+  <p>Lo hace <a href="https://www.linkedin.com/in/jansalda%C3%B1a/" target="_blank" rel="author noopener">Jan Saldaña</a> como proyecto personal. No tiene relación con ninguna empresa y no es una web oficial del Ayuntamiento de Barcelona.</p>
+  <p>Todavía no se envían avisos de nuevas licencias. Para apuntarse a la lista de interesados o comentar un error: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoLJAF0fY9p114rxvaI1TaD9tEE9CGtsOlDJRbzCrVrHQjbw/viewform?usp=publish-editor" target="_blank" rel="noopener">formulario</a>.</p>
+</main>
+
+<footer class="pie">
+  <p>Generado el 24 de noviembre de 2026.</p>
+</footer>
+<script type="module" src="que-es.js"></script>
+</body>
+</html>
